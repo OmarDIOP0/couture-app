@@ -1,0 +1,72 @@
+<button type="button" class="btn btn-warning m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <i class="fas fa-plus-circle p-1"></i>Boutique
+</button>
+<!-- Modal Ajout Boutique-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter Boutique</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="mesBoutiquesForm">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input type="text" class="form-control" placeholder="Saisir le nom de la bourique" formControlName="name">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Adresse</span>
+            <input type="text" class="form-control" placeholder="Saisir l adresse"  formControlName="adresse">
+          </div>
+          <div class="col">
+            <select class="form-select" aria-label="Choisir un Client" formControlName="manager">
+              <option selected>Choisir un Client</option>
+              <option *ngFor="let user of userData" value="{{user._id}}" class="text-black">{{user.firstName}} {{user.lastName}}</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-warning" (click)="addBoutiques(mesBoutiquesForm.value)">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="mesBoutiquesData?.length !=0">
+  <div class="d-flex mx-2" style="flex-wrap: wrap;">
+    <div class="card mx-3 mb-3" style="width: 13rem; border: none;" *ngFor="let boutique of mesBoutiquesData">
+      <div class="text-container">
+        <div class="card-header text-center fs-6 text-uppercase bg-warning text" style="font-weight: bold;">
+          {{boutique.name}}
+        </div>
+      </div>
+      <div class="card-body text-center">
+        <h5 class="card-title text">Adresse : {{ boutique.addresse }}</h5>
+        <p class="card-text text">Manager : <strong>{{ boutique.manager.firstName }} {{ boutique.manager.lastName }}</strong> </p>
+        <p class="card-text text">Téléphone: <strong>{{ boutique.manager.phone }}</strong> </p>
+      <div class="d-flex">
+        <button class="btn btn-success mx-0" routerLink="/product/shop/{{boutique._id}}">P</button>
+        <button class="btn btn-success mx-1" routerLink="/viewBoutique/{{boutique._id}}"><i class="fa fa-eye"></i></button>
+        <button class="btn btn-warning mx-1" routerLink="/updateBoutique/{{boutique._id}}"><i class="fas fa-edit"></i></button>
+        <button class="btn btn-danger mx-1" (click)="deleteBoutique(boutique._id)"><i class="fas fa-archive"></i></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="loading">
+  <div class="text-center text-warning">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+  </div>
+</ng-container>
+<ng-container *ngIf="mesBoutiquesData?.length==0">
+  <div class="text-white">
+    <h5 class="mx-3">La liste est vide !</h5>
+  </div>
+</ng-container>
+

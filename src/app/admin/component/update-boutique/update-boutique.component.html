@@ -1,0 +1,27 @@
+<button class="btn btn-warning mt-2 mx-2" (click)="navigatePrevious()" style="height: 37px; width: 35px;"><i class="fa fa-reply"></i></button>
+<div class="card m-5">
+  <div class="card-header bg-warning text-center">Afficher une Boutique</div>
+  <div class="card-body">
+    <form>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+          <input type="text" class="form-control" [(ngModel)]="boutiqueData.name" name="name">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Adresse</span>
+          <input type="text" class="form-control" [(ngModel)]="boutiqueData.adresse" name="adresse">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <select class="form-select" aria-label="Choisir un Client" formControlName="manager">
+          <option selected>Choisir un Client</option>
+          <option *ngFor="let user of userData" value="{{user._id}}" class="text-black">{{user.firstName}} {{user.lastName}}</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <button type="button" class="btn btn-success mx-auto my-2" (click)="updateBoutique()">
+    Modifier
+  </button>
+</div>

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend: 
+    build: ./
+    image: put-n-go-frontend
+    container_name: putngo-front
+    ports:
+      - "6970:80"
+    expose:
+      - 80
+    networks:
+      - putngo
+
+networks:
+  putngo:
+    driver: bridge

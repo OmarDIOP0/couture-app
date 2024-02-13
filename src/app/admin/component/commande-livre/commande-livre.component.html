@@ -1,0 +1,54 @@
+<div class="container-fluid d-flex p-3 justify-content-md-between">
+  <select [(ngModel)]='selectOption' (ngModelChange)="navigatePage(selectOption)" class="form-select center w-25 bg-warning">
+    <option value="EnCours">En Cours</option>
+    <option value="Termine">Pret</option>
+    <option value="Livre">Livré</option>
+  </select>
+</div>
+
+
+<ng-container *ngIf="commandeLivre?.length != 0">
+  <div class="m-3 table-responsive">
+    <table class="table table-bordered border-warning table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="text-warning">Numero</th>
+          <th scope="col" class="text-warning">Date</th>
+          <th scope="col" class="text-warning">Commande</th>
+          <!-- <th scope="col" class="text-warning">Client</th> -->
+          <th scope="col" class="text-warning">Avance</th>
+          <th scope="col" class="text-warning">Total</th>
+          <th scope="col" class="text-warning">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commande of commandeLivre">
+          <td>{{commande.orderNumber}}</td>
+          <td>{{formatDate(commande.updatedAt)}}</td>
+          <td>
+            <ul>
+              <li *ngFor="let produit of commande.products" class="list-unstyled">
+                {{ produit.name }}
+              </li>
+            </ul>
+          </td>
+          <!-- <td>{{ commande.owner.firstName}} {{ commande.owner.lastName}}</td> -->
+          <td>{{ commande.advance }}</td>
+          <td>{{ commande.totalOrder }}</td>
+          <td><button class="btn btn-success mx-2"><i class="fas fa-print"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="loading">
+  <div class="text-center text-warning">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+  </div>
+</ng-container>
+<ng-container *ngIf="commandeLivre?.length == 0">
+  <div class="">
+    <h5 class="m-3 text-white">La liste est vide !</h5>
+  </div>
+</ng-container>

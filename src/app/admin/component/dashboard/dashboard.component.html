@@ -1,0 +1,66 @@
+<!-- <h3 class="">Dashboard</h3>
+<div class="container">
+  <div class="card text-white mb-3 bg-primary">
+    <div class="card-body">
+      <h5 class="card-title text-center ">Client:</h5>
+      <p class="card-text text-center"><strong>100</strong> </p>
+      <div class="text-center">
+        <div class="btn btn-perso text-white" (click)="navigateClient()">Consulter</div>
+      </div>
+    </div>
+  </div>
+  <div class="card text-white bg-secondary mb-3">
+    <div class="card-body">
+      <h5 class="card-title text-center">Commandes:</h5>
+      <p class="card-text text-center"><strong>100</strong></p>
+
+      <div class="text-center">
+        <div class="btn btn-perso" (click)="navigateCommande()">Consulter</div>
+      </div>
+    </div>
+  </div>
+  <div class="card text-white bg-success mb-3">
+    <div class="card-body">
+      <h5 class="card-title text-center">Stocks:</h5>
+      <p class="card-text text-center"><strong>100</strong></p>
+      <div class="text-center">
+        <div class="btn btn-perso" (click)="navigateStock()">Consulter</div>
+      </div>
+    </div>
+  </div>
+  <div class="card text-white bg-info mb-3">
+    <div class="card-body">
+      <h5 class="card-title text-center">Boutiques:</h5>
+      <p class="card-text text-center"><strong>100</strong></p>
+      <div class="text-center">
+        <div class="btn btn-perso" (click)="navigateBoutique()">Consulter</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" *ngFor="let image of images">
+      <img src="/assets/{{image.name}}" class="d-block  img-caroussel" alt="..." height="100">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <p class="text-warning">{{image.description}}</p> -->
+        <marquee width="60%" direction="left" height="100px" style="color:yellow">
+          <h4>{{image.description}}</h4>
+        </marquee>
+      </div>
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+

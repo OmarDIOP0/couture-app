@@ -1,0 +1,47 @@
+<div class="card m-5">
+  <div class="card-header">Modifier un Client</div>
+  <div class="card-body">
+    <form>
+      <div class="row mb-3">
+        <div class="col">
+          <select class="form-select" aria-label="Choisir un Client" (change)="selectedOption($event)" name="clientId">
+            <option selected>Choisir un Client</option>
+            <option *ngFor="let client of clientData" [value]="client.id" class="text-black" [(ngModel)]="commandeData.clientId" name="clientId">{{client.prenom}} {{client.nom}}</option>
+          </select>
+        </div>
+        <div class="col input-group">
+          <input type="date" name="date" id="" class="form-control" [(ngModel)]="commandeData.date" name="date">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <select multiple [(ngModel)]="commandeData.modeleId" class="form-select" aria-label="Choisir un Modele" name="modeleId">
+            <option selected>Choisir un Modele</option>
+            <option *ngFor="let produit of produitData" [value]="produit.id" class="text-black">{{produit.libelle}}</option>
+          </select>
+        </div>
+        <div class="col input-group" style="margin-top: 7%; margin-bottom: 7%;">
+          <span class="input-group-text bg-black text-warning" >Quantite</span>
+          <input type="text" class="form-control" placeholder="Saisir la quantite" [(ngModel)]="commandeData.quantite" name="quantite">
+        </div>
+
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text bg-black text-warning">Avance</span>
+          <input type="number" class="form-control" placeholder="Saisir l'avance"  [(ngModel)]="commandeData.avance" name="avance">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text bg-black text-warning">Remise</span>
+          <input type="number" class="form-control" placeholder="Saisir l'avance"  [(ngModel)]="commandeData.remise" name="remise">
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <button type="button" class="btn btn-success mx-auto my-2" (click)="updateCommande()">
+    Modifier
+  </button>
+
+</div>
+

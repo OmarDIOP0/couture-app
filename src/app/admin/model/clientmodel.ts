@@ -1,0 +1,20 @@
+export class client {
+  prenom?:string;
+  nom?:string;
+  numeroTel?:number;
+  adresse?:string;
+  mesureC?:number;
+  mesureE?:number;
+  mesureM?:number;
+  mesureLa?:number;
+  mesureLb?:number;
+  mesureS?:number;
+  mesureK?:number;
+  mesureF?:number;
+  mesureLp?:number;
+  mesureBr?:number;
+  mesureBa?:number;
+  mesurePoignee?:number;
+  mesureMollet?:number;
+  id?:number;
+}

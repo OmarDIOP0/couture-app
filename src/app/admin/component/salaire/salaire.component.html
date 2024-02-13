@@ -1,0 +1,95 @@
+<div class="d-flex justify-content-between">
+  <button class="btn btn-warning mt-2 mx-2" routerLink="/comptabilite" style="height: 37px; width: 35px;"><i class="fa fa-reply"></i></button>
+  <button type="button" class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fas fa-user-plus p-1"></i>
+  </button>
+</div>
+
+<!-- Modal Ajout Client-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un client</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="employeForm">
+          <div class="row mb-3">
+            <div class="col input-group">
+              <span class="input-group-text" id="basic-addon1">Prenom</span>
+              <input type="text" class="form-control" formControlName="firstName" placeholder="firstName">
+            </div>
+            <div class="col input-group">
+              <span class="input-group-text" id="basic-addon1">Nom</span>
+              <input type="text" class="form-control" formControlName="lastName" placeholder="LastName">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col input-group">
+              <span class="input-group-text" id="basic-addon1">Phone</span>
+              <input type="text" class="form-control" formControlName="phone" placeholder="Phone">
+            </div>
+            <div class="col input-group">
+              <span class="input-group-text" id="basic-addon1">Salaire</span>
+              <input type="number" class="form-control" formControlName="salary" placeholder="Salaire">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <select class="form-select" aria-label="Choisir un Client" formControlName="shopId">
+              <option selected>Choisir une Boutique</option>
+              <option *ngFor="let shop of shopData" value="{{shop._id}}" class="text-black">{{shop.name}}</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-success" (click)="addEmploye(employeForm.value)">
+          Enregistrer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----LISTER CLIENTS------------------>
+  <ng-container>
+    <div class="m-3 table-responsive">
+    <table class="table table-bordered table-dark table-striped">
+      <thead>
+        <tr >
+          <th scope="col"class="text-warning">NOM</th>
+          <th scope="col" class="text-warning">PRENOM</th>
+          <th scope="col"class="text-warning">PHONE</th>
+          <th scope="col"class="text-warning">SALAIRE</th>
+          <th colspan="2"class="text-warning">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employe of employeData">
+          <td>{{employe.lastName}}</td>
+          <td>{{employe.firstName}}</td>
+          <td>{{employe.phone}}</td>
+          <td>{{employe.salary}}</td>
+          <div class="d-flex justify-content-start">
+            <td><button class="btn btn-warning mx-2" routerLink="/updateEmploye/{{employe._id}}"><i class="fas fa-edit"></i></button></td>
+          <td><button class="btn btn-danger" (click)="deleteEmploye(employe._id)"><i class="fas fa-archive"></i></button></td>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </ng-container>
+  <div class="text-center"><h4>TOTAL : <strong class="text-warning">{{salaire}}</strong></h4></div>
+
+  <!-- <ng-container *ngIf="dataClient?.length==0">
+     <h5 class="text-white mx-3">La liste est vide !</h5>
+  </ng-container> -->
+
+
+
+
+

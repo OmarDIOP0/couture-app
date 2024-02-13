@@ -1,0 +1,30 @@
+<button class="btn btn-warning mt-2 mx-2" (click)="navigatePrevious()" style="height: 37px; width: 35px;"><i class="fa fa-reply"></i></button>
+<ng-container *ngIf="produitData?.length!=0">
+  <div class="mx-2 mt-3 text-white"><h5>Liste des Produits :</h5></div>
+  <div class="container mt-3">
+    <div class="card mx-2" *ngFor="let produit of produitData">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><small>Modéle: </small>{{produit.name}}</li>
+          <li class="list-group-item"><small>Prix: </small>{{produit.price}}</li>
+          <li class="list-group-item"><small>Quantite: </small>{{produit.quantity}}</li>
+          <li class="list-group-item"><small>Taille: </small>{{produit.size}}</li>
+          <li class="list-group-item"><small>Crée le: </small>{{produit.createdAt}}</li>
+        </ul>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="loading">
+  <div class="text-center text-warning">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="produitData?.length==0">
+  <div class="">
+    <h5 class="mx-3 mt-3 text-white">La liste est vide !</h5>
+  </div>
+</ng-container>
+
+
+
+

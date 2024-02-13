@@ -1,0 +1,10 @@
+.img-caroussel{
+  height:100%;
+  width:100%;
+}
+
+@media screen and (max-width:3500px){
+  .img-caroussel{
+    height:880px;
+  }
+}

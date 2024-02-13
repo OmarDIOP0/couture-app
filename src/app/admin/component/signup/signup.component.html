@@ -1,0 +1,33 @@
+<div class="card m-auto mt-3 bg-black mx-5 mb-4" style="border: none;">
+  <img class="card-img-top m-auto" src="/assets/logo.jpg" alt="Put&Go" style="width:200px; height:150px; border-radius: 10%;">
+  <div class="card-body bg-warning" style="border:yellow;">
+    <form [formGroup]="userForm">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Firstname</span>
+        <input type="text" class="form-control" formControlName="firstName" placeholder="FirstName">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Username</span>
+        <input type="text" class="form-control" formControlName="lastName" placeholder="LastName">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Phone</span>
+        <input type="text" class="form-control" formControlName="phone" placeholder="phone">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Username</span>
+        <input type="text" class="form-control" formControlName="username" placeholder="Username">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Password</span>
+        <input type="password" class="form-control" formControlName="password" placeholder="password">
+      </div>
+    </form>
+   <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-dark" (click)="addUser(userForm.value)">
+      Enregistrer
+    </button>
+    <a href="" routerLink="/login">se connecter</a>
+   </div>
+    </div>
+  </div>

@@ -1,0 +1,91 @@
+<button class="btn btn-warning mt-2 mx-2" routerLink="/comptabilite" style="height: 37px; width: 35px;"><i class="fa fa-reply"></i></button>
+<form [formGroup]="caisseForm">
+  <div class="m-3 table-responsive">
+  <table class="table table-bordered border-none table-dark table-striped">
+    <thead>
+      <tr>
+       <th scope="col" colspan="3" class="text-warning text-center">ENTREE</th>
+      <th scope="col" colspan="4" class="text-warning text-center">SORTIE</th>
+      </tr>
+      <tr>
+        <th scope="col" class="text-warning">LIBELLE ENTREE</th>
+        <th scope="col" class="text-warning">MONTANT</th>
+        <th scope="col" class="text-warning">LIBELLE SORTIE</th>
+        <th scope="col" class="text-warning">MONTANT</th>
+        <th scope="col" class="text-warning">Boutique</th>
+        <th scope="col" colspan="2" class="text-warning">OPT</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>
+          <div class="input-group">
+            <input type="text" class="form-control" formControlName="libelleEntree" placeholder="saisir le libelle">
+          </div>
+        </td>
+        <td>
+          <div class="input-group">
+            <input type="number" class="form-control" formControlName="entree" placeholder="saisir le montant">
+          </div>
+        </td>
+        <td>
+          <div class="input-group">
+            <input type="text" class="form-control" formControlName="libelleSortie" placeholder="saisir le libelle">
+          </div>
+        </td>
+        <td>
+          <div class="input-group">
+            <input type="number" class="form-control" formControlName="sortie" placeholder="saisir le montant">
+          </div>
+        </td>
+        <td>
+          <select class="form-select" aria-label="Choisir un Client" formControlName="shopId">
+            <option selected>Choisir une Boutique</option>
+            <option *ngFor="let shop of shopData" value="{{shop._id}}" class="text-black">{{shop.name}}</option>
+          </select>
+        </td>
+        <td colspan="2">
+          <button type="button" class="btn btn-success" (click)="addCaisse(caisseForm.value)">
+            ++
+          </button>
+        </td>
+      </tr>
+      <ng-container *ngIf="caisseData?.length!=0">
+      <tr class="" *ngFor="let caisse of caisseData" class="text-container">
+        <td class="bg-gradient text">
+          {{caisse.dateAjout}}
+        </td>
+        <td class="bg-gradient">{{caisse.libelleEntree}}</td>
+        <td class="bg-gradient">{{caisse.entree}}</td>
+        <td class="bg-gradient">{{caisse.libelleSortie}}</td>
+        <td class="bg-gradient">{{caisse.sortie}}</td>
+        <td class="bg-gradient">{{caisse.montantSortie}}</td>
+        <!-- <td class="bg-gradient">{{caisse.shopId}}</td> -->
+        <td><button class="btn btn-danger bg-gradient" (click)="deleteCaisse(caisse._id)"><i class="fas fa-archive"></i></button></td>
+      </tr>
+    </ng-container>
+    <ng-container *ngIf="caisseData?.length==0">
+      <div class="">
+        <p>La liste est vide !</p>
+      </div>
+    </ng-container>
+  <ng-container *ngIf="loading">
+    <div class="text-center text-warning">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
+  </ng-container>
+    </tbody>
+
+  </table>
+</div>
+</form>
+<div class="container d-flex flex-wrap">
+  <div class="text mx-2"><h4>TOTAL ENTREE: <strong class="text-warning">{{totalEntree}}</strong></h4></div>
+  <div class="text mx-2"><h4>TOTAL SORTIE: <strong class="text-warning">{{totalSortie}}</strong></h4></div>
+</div>
+<div class="text-center mt-3"><h2>TOTAL: <strong class="text-warning">{{total}}</strong></h2></div>
+
+<!-- <ng-container>
+   <h5 class="text-white mx-3">La liste est vide !</h5>
+</ng-container> -->

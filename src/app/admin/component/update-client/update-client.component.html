@@ -1,0 +1,88 @@
+<button class="btn btn-warning mt-2 mx-2" routerLink="/client" style="height: 37px; width: 35px;"><i class="fa fa-reply"></i></button>
+<div class="card m-5">
+  <div class="card-header">Modifier un Client</div>
+  <div class="card-body">
+    <form>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Prenom</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.firstName" name="prenom">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Nom</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.lastName" name="nom">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">N°Tel</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.phone" name="numeroTel">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">C</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureC" name="mesureC">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">E</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureE" name="mesureE">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">M</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureM" name="mesureM">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">La</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureLa" name="mesureLa">
+        </div>
+      </div>
+       <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Lb</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureLb" name="mesureLb">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">S</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureS" name="mesureS">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">K</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureK" name="mesureK">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">F</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureF" name="mesureF">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Lp</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureLp" name="mesureLp">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Br</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureBr" name="mesureBr">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Ba</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureBa" name="mesureBa">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Poignée</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesurePoignee" name="mesurePoignee">
+        </div>
+      </div>
+      <div class="row mb-3" style="margin-left:35%; margin-right: 35%;">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Mollet</span>
+          <input type="text" class="form-control" [(ngModel)]="clientData.mesures.mesureMollet" name="mesureMollet">
+        </div>
+      </div>
+    </form>
+  </div>
+  <button type="button" class="btn btn-success mx-auto my-2" (click)="updateClient()">
+    Modifier
+  </button>
+
+</div>

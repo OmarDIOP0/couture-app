@@ -1,0 +1,59 @@
+<button class="btn btn-warning mt-2 mx-2" (click)="navigatePrevious()" style="height: 37px; width: 35px;"><i class="fa fa-reply"></i></button>
+<div class="card m-4">
+  <div class="card-header bg-warning text-center">Afficher un produit</div>
+  <div class="card-body">
+    <form>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.name" name="name">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Price</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.price" name="price">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Taille</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.size" name="createdAt">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Qnte</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.quantity" name="updatedAt">
+        </div>
+
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Categ</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.category.name" name="Name">
+        </div>
+        <div class="col input-group">
+              <span class="input-group-text" >Boutiq</span>
+              <input type="text" class="form-control" [(ngModel)]="produitData.shopId.name" name="boutique">
+          </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" >FName</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.shopId.manager.firstName" name="firstName">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" >LName</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.shopId.manager.lastName" name="lastName">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" >Crée</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.createdAt" name="cree le">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Desc</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.category.description" name="description">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

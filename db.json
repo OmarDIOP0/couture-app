@@ -1,0 +1,415 @@
+{
+  "clients": [
+    {
+      "prenom": "Omar",
+      "nom": "Diop",
+      "numeroTel": 771011010,
+      "adresse": "Patte d'oie",
+      "mesureC": "10",
+      "mesureE": "12",
+      "mesureM": "12",
+      "mesureLa": "10",
+      "mesureLb": "10",
+      "mesureS": "12",
+      "mesureK": "12",
+      "mesureF": "15",
+      "mesureLp": "17",
+      "mesureBr": "18",
+      "mesureBa": "22",
+      "mesurePoignee": "12",
+      "mesureMollet": "120",
+      "id": 1
+    },
+    {
+      "prenom": "Fatou",
+      "nom": "Diallo",
+      "numeroTel": 771342345,
+      "adresse": "Kirene",
+      "mesureC": "12",
+      "mesureE": "10",
+      "mesureM": "12",
+      "mesureLa": "13",
+      "mesureLb": "0",
+      "mesureS": "12",
+      "mesureK": "10",
+      "mesureF": "17",
+      "mesureLp": "12",
+      "mesureBr": "19",
+      "mesureBa": "12",
+      "mesurePoignee": "13",
+      "mesureMollet": "12",
+      "id": 2
+    },
+    {
+      "prenom": "Alassane",
+      "nom": "Faye",
+      "numeroTel": 66789909,
+      "adresse": "patte d'oie",
+      "mesureC": "",
+      "mesureE": "10",
+      "mesureM": "",
+      "mesureLa": "",
+      "mesureLb": "",
+      "mesureS": "",
+      "mesureK": "",
+      "mesureF": "",
+      "mesureLp": "12",
+      "mesureBr": "",
+      "mesureBa": "",
+      "mesurePoignee": "",
+      "mesureMollet": "",
+      "id": 3
+    },
+    {
+      "prenom": "Ousseynou",
+      "nom": "ka",
+      "numeroTel": 2231,
+      "adresse": "Damel",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": "12",
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 4
+    },
+    {
+      "prenom": "Fallou",
+      "nom": "Cisse",
+      "numeroTel": 456789,
+      "adresse": "Damel",
+      "mesureC": "10",
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": null,
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 5
+    },
+    {
+      "prenom": "Modou",
+      "nom": "Faye",
+      "numeroTel": 456789,
+      "adresse": "Damel",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": null,
+      "mesureK": "10",
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 6
+    },
+    {
+      "prenom": "Alpha",
+      "nom": "Coly",
+      "numeroTel": 345678,
+      "adresse": "Damel",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": null,
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 7
+    },
+    {
+      "prenom": "Assane",
+      "nom": "Diouf",
+      "numeroTel": 45678,
+      "adresse": "Nguek",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": null,
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 8
+    },
+    {
+      "prenom": "Assane",
+      "nom": "DIOP",
+      "numeroTel": 234567,
+      "adresse": "Nguek",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": "10",
+      "mesureS": null,
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 9
+    },
+    {
+      "prenom": "Daouda",
+      "nom": "Diarra",
+      "numeroTel": 234567,
+      "adresse": "Kamel",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": "10",
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 10
+    },
+    {
+      "prenom": "Malang",
+      "nom": "Sano",
+      "numeroTel": 456789,
+      "adresse": "Pikine",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": null,
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 11
+    },
+    {
+      "prenom": "papa",
+      "nom": "Diallo",
+      "numeroTel": 456789,
+      "adresse": "Pikine",
+      "mesureC": null,
+      "mesureE": null,
+      "mesureM": null,
+      "mesureLa": null,
+      "mesureLb": null,
+      "mesureS": null,
+      "mesureK": null,
+      "mesureF": null,
+      "mesureLp": null,
+      "mesureBr": null,
+      "mesureBa": null,
+      "mesurePoignee": null,
+      "mesureMollet": null,
+      "id": 12
+    }
+  ],
+  "commandes": [
+    {
+      "clientId": "1",
+      "date": "2023-08-11",
+      "modeles": [
+        {
+          "modeleId": "2",
+          "quantite": "2",
+          "totalModele": ""
+        }
+      ],
+      "avance": 1000,
+      "remise": 2000,
+      "valide": true,
+      "livre": true,
+      "id": 1
+    },
+    {
+      "clientId": "2",
+      "date": "2023-08-25",
+      "modeles": [
+        {
+          "modeleId": "2",
+          "quantite": 10,
+          "totalModele": ""
+        }
+      ],
+      "avance": 10,
+      "remise": 12,
+      "valide": true,
+      "livre": true,
+      "id": 2
+    },
+    {
+      "clientId": "1",
+      "date": "2023-08-02",
+      "modeles": [
+        {
+          "modeleId": "2",
+          "quantite": 10,
+          "totalModele": ""
+        }
+      ],
+      "avance": 10000,
+      "remise": 100,
+      "valide": "",
+      "livre": "",
+      "id": 3
+    }
+  ],
+  "produits": [
+    {
+      "libelle": "Grand Boubou",
+      "quantite": "10",
+      "prix": "10000",
+      "taille": "XL",
+      "id": 1
+    },
+    {
+      "libelle": "Bazin Riche",
+      "quantite": "12",
+      "prix": "20000",
+      "taille": "S",
+      "id": 2
+    },
+    {
+      "libelle": "Boubou",
+      "quantite": "5",
+      "prix": "5000",
+      "taille": "M",
+      "id": 3
+    },
+    {
+      "libelle": "Gentzner",
+      "quantite": "17",
+      "prix": "20000",
+      "taille": "2XL",
+      "id": 4
+    },
+    {
+      "libelle": "Boubou",
+      "quantite": "10",
+      "prix": "1000",
+      "taille": "XL",
+      "id": 5
+    }
+  ],
+  "mesboutiques": [
+    {
+      "libelle": "Sante Yalla",
+      "username": "Omar DIOP",
+      "password": "omar1234",
+      "id": 1
+    },
+    {
+      "libelle": "Couture ",
+      "username": "fatou Diallo",
+      "password": "fatou123",
+      "id": 2
+    },
+    {
+      "libelle": "Diallo Boutique",
+      "username": "Ibrahima Diallo",
+      "password": "diallo1234",
+      "id": 3
+    }
+  ],
+  "categorie": [
+    {
+      "libelle": "Gentzner",
+      "description": "Venu du Mali",
+      "id": 1
+    },
+    {
+      "libelle": "Patalon",
+      "description": "Venu du Mali",
+      "id": 2
+    }
+  ],
+  "user": [
+    {
+      "numero": 771213034,
+      "password": "fabregas12",
+      "id": 1
+    },
+    {
+      "numero": 772103254,
+      "password": "fabregas12",
+      "id": 2
+    },
+    {
+      "numero": 771210321,
+      "password": "omar1234",
+      "id": 3
+    },
+    {
+      "numero": 771212334,
+      "password": "fabregas12",
+      "id": 4
+    }
+  ],
+  "caisse": [
+    {
+      "date": "2023-09-14",
+      "libelleEntree": "TD12-21",
+      "montantEntree": 20000,
+      "libelleSortie": "Livraison Taxi",
+      "montantSortie": 2000,
+      "id": 1
+    },
+    {
+      "date": "2023-09-15",
+      "libelleEntree": "TD13",
+      "montantEntree": 30000,
+      "libelleSortie": "Taxi2",
+      "montantSortie": 3000,
+      "id": 2
+    },
+    {
+      "date": "",
+      "libelleEntree": "",
+      "montantEntree": "",
+      "libelleSortie": "Livraison tissu",
+      "montantSortie": 4000,
+      "id": 3
+    }
+  ],
+  "stock": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,41 @@
+<button class="btn btn-warning mt-2 mx-2" routerLink="/comptabilite" style="height: 37px; width: 35px;"><i class="fa fa-reply"></i></button>
+<div class="card m-auto mt-5 bg-black mx-3" style="max-width:50rem;border: none;">
+  <div class="card-body bg-warning" style="border:yellow;">
+    <form>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Propr</span>
+          <input type="text" class="form-control" formControlName="proprietaire" placeholder="Saisir le proprietaire">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">TEL</span>
+          <input type="text" class="form-control" formControlName="numeroTel" placeholder="Saisir le numéro">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Cho</span>
+          <input type="text" class="form-control" formControlName="prenom" placeholder="Prénom">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Quantité</span>
+          <input type="text" class="form-control" formControlName="quantite" placeholder="Saisir la quantité">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Remise</span>
+          <input type="text" class="form-control" formControlName="remise" placeholder="Saisir la remise">
+        </div>
+        <div class="col input-group mt-2">
+          <h5>Total : 0</h5>
+        </div>
+      </div>
+    </form>
+   <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-dark">
+    Imprimer
+    </button>
+   </div>
+    </div>
+  </div>

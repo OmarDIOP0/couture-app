@@ -1,0 +1,70 @@
+<!-- <h4 class="mb-3">Gestion de la Boutique</h4> -->
+<div class="">
+  <button type="button" class="btn btn-warning m-3" data-bs-toggle="modal"
+  data-bs-target="#exampleModal">
+  <i class="fas fa-plus-circle p-1"></i>Categorie
+</button>
+<a class="text-warning" href=""routerLink="/produit">Voir la liste des produits</a>
+</div>
+
+<ng-container *ngIf="categorieData?.length!=0">
+ <div class="" >
+  <div class="container mt-3">
+    <div class="card mb-3 bg-warning" *ngFor="let categorie of categorieData">
+      <div class="card-body">
+        <div class="text-container">
+          <h5 class="card-title text-center">{{categorie.name}}</h5>
+          <p class="card-text text">{{categorie.description}}</p>
+        </div>
+        <div class="d-flex justify-content-sm-between mt-3" style="margin-bottom: 0px;">
+          <button class="btn btn-success text-warning mx-2" routerLink="/product/category/{{categorie._id}}"><i class="fa fa-eye"></i></button>
+          <button class="btn btn-dark mx-2" routerLink="/updateBoutiqueCategorie/{{categorie._id}}"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-danger mx-2" (click)="deleteCategorie(categorie._id)"><i class="fas fa-archive"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</ng-container>
+<ng-container *ngIf="loading">
+  <div class="text-center text-warning">
+    <i class="fas fa-spinner fa-spin fa-3x"></i>
+  </div>
+</ng-container>
+<ng-container *ngIf="categorieData?.length==0">
+  <div class="">
+    <h5 class="m-3">La liste est vide !</h5>
+  </div>
+</ng-container>
+
+
+<!-- Modal Ajout Categorie Stock-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter Categorie</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="categorieForm">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input type="text" class="form-control" placeholder="Saisir le libelle" formControlName="name">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">Description</span>
+            <textarea class="form-control" aria-label="Saisir la description" formControlName="description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-success" (click)="addCategorie(this.categorieForm.value)" [disabled]="categorieForm.invalid">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>

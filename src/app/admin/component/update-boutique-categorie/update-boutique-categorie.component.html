@@ -1,0 +1,19 @@
+<button class="btn btn-dark mt-2 mx-2"><a href="" routerLink="/boutique" class="text-warning">Retour</a></button>
+<div class="card m-5">
+  <div class="card-header bg-warning text-center">Afficher une Categorie</div>
+  <div class="card-body">
+    <form>
+        <div class="col input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+          <input type="text" class="form-control" [(ngModel)]="categorieData.name" name="name">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Description</span>
+          <textarea name="description" id="" cols="90" rows="2" [(ngModel)]="categorieData.description"></textarea>
+        </div>
+    </form>
+  </div>
+  <button type="button" class="btn btn-success mx-auto my-2" (click)="updateCategorie()">
+    Modifier
+  </button>
+</div>

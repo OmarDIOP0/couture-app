@@ -1,0 +1,32 @@
+<button class="btn btn-dark mt-2"><a href="" routerLink="/employee" class="text-warning">Retour</a></button>
+<div class="card m-5">
+  <div class="card-header">Modifier un Employe</div>
+  <div class="card-body">
+    <form>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Prenom</span>
+          <input type="text" class="form-control" [(ngModel)]="employeData.firstName" name="firstName">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Nom</span>
+          <input type="text" class="form-control" [(ngModel)]="employeData.lastName" name="LastName">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">N°Tel</span>
+          <input type="text" class="form-control" [(ngModel)]="employeData.phone" name="phone">
+        </div>
+      <div class="col input-group">
+        <span class="input-group-text" id="basic-addon1">Salaire</span>
+        <input type="number" class="form-control" [(ngModel)]="employeData.salary" name="salary">
+      </div>
+    </div>
+    </form>
+  </div>
+  <button type="button" class="btn btn-success mx-auto my-2" (click)="updateEmploye()">
+    Modifier
+  </button>
+
+</div>

@@ -1,0 +1,35 @@
+version: 2.1
+# orbs:
+# node: circleci/node@5.1.0
+jobs:
+  # build:
+  #   executor: node/default
+  #   docker:
+  #     - image: cimg/node:18.18.0
+  #   steps:
+  #     - checkout
+  #     - node/install-packages:
+  #         pkg-manager: yarn
+  #     - run:
+  #         name: Build App
+  #         command: yarn build
+  deploy:
+    machine:
+      image: ubuntu-2204:2023.07.2
+    steps:
+      - checkout
+      - run:
+          name: SSH to Remote Machine
+          command: ssh $SSH_USER@$SSH_HOST "cd clients/put-n-go/frontend && bash ./install.sh"
+
+workflows:
+  building:
+    jobs:
+      # - build:
+      #     filters:
+      #       branches:
+      #         only: main
+      - deploy:
+          filters:
+            branches:
+              only: main

@@ -1,0 +1,34 @@
+<div class="mx-1">
+  <button class="btn btn-danger mt-1" (click)="logout()">Deconnexion</button>
+</div>
+<div class="card m-auto mt-2 mx-5 bg-black" style="border: none;">
+  <img class="card-img-top m-auto" src="/assets/logo.jpg" alt="Put&Go" style="width:200px; height:150px; border-radius: 10%;">
+  <div class="card-body bg-warning" style="border:yellow;">
+    <form>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">FirstName</span>
+        <input type="text" class="form-control" formControlName="firstName" value="{{ userProfile.firstName }}">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">lastName</span>
+        <input type="text" class="form-control" formControlName="lastName" value="{{ userProfile.lastName }}">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Phone</span>
+        <input type="text" class="form-control" formControlName="phone" value="{{ userProfile.phone }}">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Username</span>
+        <input type="text" class="form-control" formControlName="username" value="{{ userProfile.username }}">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Password</span>
+        <input type="password" class="form-control" formControlName="password" placeholder="password" value="{{ userProfile.password }}">
+      </div>
+    </form>
+   <div class="d-flex justify-content-center">
+
+   </div>
+    </div>
+  </div>
+

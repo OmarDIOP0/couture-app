@@ -1,0 +1,46 @@
+<button class="btn btn-dark mt-2 mx-2"><a href="" routerLink="/produit" class="text-warning">Retour</a></button>
+<div class="card m-5">
+  <div class="card-header bg-warning text-center">Afficher un produit</div>
+  <div class="card-body">
+    <form>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.name" name="name">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Price</span>
+          <input type="number" class="form-control" [(ngModel)]="produitData.price" name="price">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Taille</span>
+          <input type="text" class="form-control" [(ngModel)]="produitData.size" name="size">
+        </div>
+        <div class="col input-group">
+          <span class="input-group-text" id="basic-addon1">Quantite</span>
+          <input type="number" class="form-control" [(ngModel)]="produitData.quantity" name="quantity">
+        </div>
+
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <select class="form-select" aria-label="Choisir une Boutique" name="shopId">
+            <option selected>Choisir une boutique</option>
+            <option *ngFor="let shop of shopData" [value]="shop._id" class="text-black">{{shop.name}}</option>
+          </select>
+        </div>
+        <div class="col">
+          <select class="form-select" aria-label="Choisir un Categorie" name="category">
+            <option selected>Choisir une categorie</option>
+            <option *ngFor="let categorieId of categorieData" [value]="categorieId._id" class="text-black">{{categorieId.name}}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+  <button type="button" class="btn btn-success mx-auto my-2" (click)="updateBoutique()">
+    Modifier
+  </button>
+</div>

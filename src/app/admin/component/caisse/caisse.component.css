@@ -1,0 +1,9 @@
+.text-container{
+  width:150px;
+  overflow:hidden;
+  }
+  .text{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  }

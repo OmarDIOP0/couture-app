@@ -1,0 +1,21 @@
+<div class="card m-auto mt-5 mx-5 bg-black" style="border: none;">
+  <img class="card-img-top m-auto" src="/assets/logo.jpg" alt="Put&Go" style="width:200px; height:150px; border-radius: 10%;">
+  <div class="card-body bg-warning" style="border:yellow;">
+    <form [formGroup]="loginForm">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Username</span>
+        <input type="text" class="form-control" formControlName="username" placeholder="saisir le username">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Password</span>
+        <input type="password" class="form-control" formControlName="password" placeholder="saisir le mot de passe">
+      </div>
+    </form>
+   <div class="d-flex justify-content-between">
+    <a href="" routerLink="/signup">Cree un compte</a>
+    <button type="submit" class="btn btn-dark" (click)="login(loginForm.value)">
+    Connecter
+    </button>
+   </div>
+    </div>
+  </div>

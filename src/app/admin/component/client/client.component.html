@@ -1,0 +1,198 @@
+<!-- <h4 class="mb-3">Gestions des Clients</h4> -->
+<button type="button" class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <i class="fas fa-user-plus p-1"></i>Client
+</button>
+<div class="container mt-4 d-flex">
+  <h5 class="text-warning mx-3">Utilisateur</h5>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" [(ngModel)]="showClients" id="switchClientsUsers">
+    <!-- <label class="form-check-label text-warning" for="switchClientsUsers">Afficher les clients</label> -->
+    <h5 class="mx-4 text-warning">Client</h5>
+  </div>
+</div>
+<!-- Modal Ajout Client-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un client</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="clientForm">
+          <div class="row mb-3">
+            <div class="col input-group">
+              <span class="input-group-text" id="basic-addon1">FirstName</span>
+              <input type="text" class="form-control" formControlName="firstName" placeholder="Prénom">
+            </div>
+            <div class="col input-group">
+              <span class="input-group-text" id="basic-addon1">LastName</span>
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Nom ">
+            </div>
+          </div>
+          <div class="alert alert-danger" *ngIf="clientForm.controls['firstName'].invalid && clientForm.controls['firstName'].touched">Le champ Prénom est obligatoire</div>
+          <div class="alert alert-danger" *ngIf="clientForm.controls['lastName'].invalid && clientForm.controls['lastName'].touched">Le champ Nom est obligatoire</div>
+          <div class="row mb-3">
+            <div class="col input-group">
+              <span class="input-group-text" id="basic-addon1">Phone</span>
+              <input type="text" class="form-control" formControlName="phone" placeholder="phone">
+            </div>
+          </div>
+           <div formGroupName="mesures">
+            <div class="row mb-3">
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">C</span>
+                <input type="text" class="form-control" formControlName="mesureC" placeholder="Mesure C">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">E</span>
+                <input type="text" class="form-control" formControlName="mesureE" placeholder="Mesure E">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">M</span>
+                <input type="text" class="form-control" formControlName="mesureM" placeholder="Mesure M">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">La</span>
+                <input type="text" class="form-control" formControlName="mesureLa" placeholder="Mesure La">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">Lb</span>
+                <input type="text" class="form-control" formControlName="mesureLb" placeholder="Mesure Lb">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">Lp</span>
+                <input type="text" class="form-control" formControlName="mesureLp" placeholder="Mesure Lp">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">S</span>
+                <input type="text" class="form-control" formControlName="mesureS" placeholder="Mesure S">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">K</span>
+                <input type="text" class="form-control" formControlName="mesureK" placeholder="Mesure K">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">F</span>
+                <input type="text" class="form-control" formControlName="mesureF" placeholder="Mesure F">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">Br</span>
+                <input type="text" class="form-control" formControlName="mesureBr" placeholder="Mesure Br">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">Ba</span>
+                <input type="text" class="form-control" formControlName="mesureBa" placeholder="Mesure Ba">
+              </div>
+
+            </div>
+            <div class="row mb-3">
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">Poignée</span>
+                <input type="text" class="form-control" formControlName="mesurePoignee" placeholder="Mesure Poignée">
+              </div>
+              <div class="col input-group">
+                <span class="input-group-text" id="basic-addon1">Mollet</span>
+                <input type="text" class="form-control" formControlName="mesureMollet" placeholder="Mesure Mollet">
+              </div>
+            </div>
+           </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-success" (click)="submitClient(this.clientForm.value)" >
+          Enregistrer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-----LISTER CLIENTS------------------>
+<div *ngIf="showClients">
+  <div class="d-flex">
+    <h5 class="text-white" style="margin-left: 10px;">Nombre de Clients :</h5><h5 class="text-warning px-1">{{nombreClient}}</h5>
+  </div>
+  <ng-container *ngIf="dataClient?.length!=0">
+    <div class="m-3 table-responsive">
+    <table class="table table-bordered border-warning table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col"class="text-warning">FirstName</th>
+          <th scope="col" class="text-warning">LastName</th>
+          <th scope="col"class="text-warning">Phone</th>
+          <th scope="col" class="text-warning" colspan="2">Optionss</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dataClient">
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{item.phone}}</td>
+          <div class="d-flex justify-content-start">
+            <td><button class="btn btn-warning mx-2" routerLink="/updateClient/{{item._id}}"><i class="fas fa-edit"></i></button></td>
+            <td><button class="btn btn-success text-warning mx-2" routerLink="/viewClient/{{item._id}}"><i class="fa fa-eye"></i></button></td>
+            <td><button class="btn btn-danger mx-2" (click)="deleteClient(item._id)"><i class="fas fa-archive"></i></button></td>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </ng-container>
+</div>
+  <ng-container *ngIf="loading">
+    <div class="text-center text-warning">
+      <i class="fas fa-spinner fa-spin fa-3x"></i>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="dataClient?.length==0">
+     <h5 class="text-white mx-3">La liste est vide !</h5>
+  </ng-container>
+
+  <div *ngIf="!showClients">
+    <div class="d-flex">
+      <h5 class="text-white" style="margin-left: 10px;">Nombre de Utilisateur :</h5><h5 class="text-warning px-1">{{nombreUser}}</h5>
+    </div>
+    <ng-container *ngIf="userData?.length!=0">
+      <div class="m-3 table-responsive">
+      <table class="table table-bordered border-warning table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col"class="text-warning">FirstName</th>
+            <th scope="col" class="text-warning">LastName</th>
+            <th scope="col"class="text-warning">Phone</th>
+            <th scope="col"class="text-warning">Username</th>
+            <!-- <th scope="col" class="text-warning" colspan="2">Optionss</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userData">
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.username}}</td>
+            <!-- <div class="d-flex justify-content-start">
+              <td><button class="btn btn-warning mx-2" routerLink="/updateClient/{{item._id}}"><i class="fas fa-edit"></i></button></td>
+              <td><button class="btn btn-success text-warning mx-2" routerLink="/viewClient/{{item._id}}"><i class="fa fa-eye"></i></button></td>
+              <td><button class="btn btn-danger mx-2" (click)="deleteClient(item._id)"><i class="fas fa-archive"></i></button></td>
+            </div> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </ng-container>
+  </div>
+
+
+
+
+
